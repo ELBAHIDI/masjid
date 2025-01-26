@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
@@ -42,6 +43,11 @@ export default function HomepageFeatures(): JSX.Element {
 
   return (
     <section className={styles.heroSection}>
+      <div className={styles.logo}>
+        <Link to="/">
+          Masjid Ridwan
+        </Link>
+      </div>
       <div className={styles.videoBackground}>
         {currentVideo && (
           <video
@@ -74,8 +80,8 @@ export default function HomepageFeatures(): JSX.Element {
       </div>
       <div className={styles.videoOverlay}></div>
       <div className={styles.heroContent}>
-        <h1>Welcome to Islam Gate</h1>
-        <p>Your Gateway to Islamic Knowledge and Spirituality</p>
+        <h1>MASJID RIDWAN</h1>
+        <p>VII AMI CALNIST UL PEAELNC</p>
       </div>
     </section>
   );

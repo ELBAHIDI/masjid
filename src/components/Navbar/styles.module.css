@@ -103,4 +103,43 @@
     .contactInfo span:not(:first-child) {
         display: none;
     }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #C5A572;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .navLinks {
+    justify-content: center;
+  }
 } 
