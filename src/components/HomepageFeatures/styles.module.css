@@ -31,13 +31,15 @@
   z-index: -2;
 }
 
-.videoBackground video {
+.video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
 }
 
 .videoOverlay {
@@ -65,4 +67,44 @@
 .heroContent p {
   font-size: 1.5rem;
   margin-bottom: 2rem;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+/* Remove the green background */
+.videoBackground::before {
+  display: none;
+}
+
+/* Ensure videos are always playing even when hidden */
+.video.hidden {
+  opacity: 0;
+  visibility: visible;
+  z-index: -1;
+}
+
+.video {
+  z-index: 1;
+}
+
+/* Smooth transition between videos */
+.video {
+  will-change: opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.video {
+  animation: fadeIn 0.5s ease-in-out;
 }
