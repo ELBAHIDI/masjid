@@ -70,9 +70,21 @@
 
 .logo {
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 20px;
+  left: 20px;
   z-index: 10;
+  width: 150px; /* Adjust base width */
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  display: block; /* Remove the display: none */
+  transition: transform 0.3s ease;
+}
+
+.logo a:hover img {
+  transform: scale(1.05);
 }
 
 .logo a {
@@ -88,11 +100,6 @@
 .logo a:hover {
   color: rgb(31, 165, 136);
   transform: scale(1.05);
-}
-
-/* Remove this since we're using text */
-.logo img {
-  display: none;
 }
 
 .heroContent h1 {
@@ -159,8 +166,9 @@
   }
 
   .logo {
-    top: 20px;
-    left: 20px;
+    width: 100px; /* Smaller on mobile */
+    top: 15px;
+    left: 15px;
   }
   
   .logo a {

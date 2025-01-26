@@ -15,37 +15,45 @@ export default function HomepageFeatures(): JSX.Element {
   ];
 
   useEffect(() => {
-    // Initial setup - simplified for two videos
-    const initialVideo = Math.random() < 0.5 ? videos[0] : videos[1];
+    // Initial setup
+    const initialVideo = videos[0];
+    const nextVideo = videos[1];
     setCurrentVideo(initialVideo);
-    setNextVideo(initialVideo === videos[0] ? videos[1] : videos[0]);
+    setNextVideo(nextVideo);
 
     const rotateVideos = () => {
-      // Simple toggle between two videos
+      // Start fading out current video
       if (currentVideoRef.current) {
         currentVideoRef.current.classList.add(styles.fadeOut);
       }
+      
+      // Start fading in next video
       if (nextVideoRef.current) {
         nextVideoRef.current.classList.remove(styles.hidden);
-        nextVideoRef.current.classList.remove(styles.fadeOut);
       }
 
-      // After transition, swap videos
+      // After transition completes, swap videos
       setTimeout(() => {
-        setCurrentVideo(nextVideo);
-        setNextVideo(currentVideo);
-      }, 500);
+        // Toggle between the two videos
+        setCurrentVideo(prev => prev === videos[0] ? videos[1] : videos[0]);
+        setNextVideo(prev => prev === videos[0] ? videos[1] : videos[0]);
+      }, 1000);
     };
 
+    // Set up the interval for rotation
     const intervalId = setInterval(rotateVideos, 5000);
-    return () => clearInterval(intervalId);
-  }, [currentVideo, nextVideo]);
+
+    // Cleanup on unmount
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []); // Empty dependency array since we don't need to re-run this effect
 
   return (
     <section className={styles.heroSection}>
       <div className={styles.logo}>
         <Link to="/">
-          Masjid Ridwan
+          <img src="/logo3.jpg" alt="Masjid Ridwan" />
         </Link>
       </div>
       <div className={styles.videoBackground}>
@@ -55,6 +63,7 @@ export default function HomepageFeatures(): JSX.Element {
             autoPlay
             muted
             loop
+            playsInline
             className={styles.video}
             onLoadedData={(e) => {
               e.currentTarget.play();
@@ -69,6 +78,7 @@ export default function HomepageFeatures(): JSX.Element {
             autoPlay
             muted
             loop
+            playsInline
             className={clsx(styles.video, styles.hidden)}
             onLoadedData={(e) => {
               e.currentTarget.play();
@@ -81,7 +91,7 @@ export default function HomepageFeatures(): JSX.Element {
       <div className={styles.videoOverlay}></div>
       <div className={styles.heroContent}>
         <h1>MASJID RIDWAN</h1>
-        <p>VII AMI CALNIST UL PEAELNC</p>
+        <p>DARLINGTON COMMUNITY CENTER</p>
       </div>
     </section>
   );
