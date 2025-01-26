@@ -28,3 +28,49 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Hide default Docusaurus elements */
+.navbar__brand {
+  display: none !important;
+}
+
+.navbar-sidebar {
+  display: none !important;
+}
+
+/* Hide any other default elements you see */
+.header-github-link {
+  display: none !important;
+}
+
+/* Additional rules to hide all default Docusaurus elements */
+.navbar__items {
+  display: none !important;
+}
+
+.navbar__toggle {
+  display: none !important;
+}
+
+.theme-doc-sidebar-container {
+  display: none !important;
+}
+
+.navbar__search-input {
+  display: none !important;
+}
+
+/* Hide the default theme toggle */
+.navbar__items--right > div {
+  display: none !important;
+}
+
+/* Remove default padding */
+.main-wrapper {
+  padding: 0 !important;
+}
+
+/* Hide footer if you don't want it */
+.footer {
+  display: none !important;
+}
