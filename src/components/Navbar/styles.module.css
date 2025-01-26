@@ -1,0 +1,106 @@
+/* Top Bar */
+.topBar {
+    background: #333;
+    color: white;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contactInfo span {
+    margin-right: 20px;
+}
+
+.languageSelector span {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Main Navigation */
+.mainNav {
+    background: #3C2A21; /* Dark brown background */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    height: 40px;
+}
+
+.navLinks {
+    display: flex;
+    gap: 30px;
+}
+
+.navLinks a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+    color: #C5A572; /* Gold accent color */
+}
+
+.navButtons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.searchBtn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px;
+    transition: color 0.3s ease;
+}
+
+.searchBtn:hover {
+    color: #C5A572;
+}
+
+.visaBtn {
+    background: #C5A572;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.visaBtn:hover {
+    background: #B39461;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .navLinks {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+    }
+    
+    .contactInfo span:not(:first-child) {
+        display: none;
+    }
+} 

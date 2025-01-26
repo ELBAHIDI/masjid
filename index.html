@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Guide</title>
+    <title>Mosque Guide</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Top Bar -->
@@ -13,11 +13,12 @@
         <div class="container">
             <div class="contact-info">
                 <span>Contact Us</span>
-                <span>Outside KSA: +966920000284</span>
-                <span>Inside KSA: 1966</span>
+                <span>Phone: +966920000284</span>
+                <span>Prayer Line: 1966</span>
             </div>
             <div class="language-selector">
                 <span>En</span>
+                <span>عربي</span>
                 <i class="fas fa-globe"></i>
             </div>
         </div>
@@ -27,63 +28,130 @@
     <nav class="main-nav">
         <div class="container">
             <div class="logo">
-                <img src="logo.png" alt="Logo">
+                <img src="mosque-logo.png" alt="Mosque Logo">
             </div>
             <div class="nav-links">
-                <a href="#">About Us</a>
+                <a href="#">About</a>
+                <a href="#">Prayer Times</a>
+                <a href="#">Programs</a>
                 <a href="#">Services</a>
-                <a href="#">Destinations</a>
-                <a href="#">City 1</a>
-                <a href="#">City 2</a>
-                <a href="#">Packages</a>
+                <a href="#">Education</a>
+                <a href="#">Community</a>
             </div>
             <div class="nav-buttons">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
-                <button class="visa-btn">eVisa</button>
+                <button class="donate-btn">Donate</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
+        <!-- Add video background -->
+        <div class="video-background">
+            <video autoplay muted loop id="mosque-video">
+                <source src="../static/masjid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- Overlay for better text readability -->
+        <div class="video-overlay"></div>
+        
         <div class="hero-content">
-            <h1>Welcome to Your Official Guide</h1>
-            <p>Discover amazing destinations</p>
-            <button class="cta-button">Get Started</button>
+            <h1>Welcome to Your Spiritual Home</h1>
+            <p>Join us in worship, learning, and community</p>
+            <div class="prayer-times">
+                <h2>Today's Prayer Times</h2>
+                <div class="prayer-grid">
+                    <div class="prayer-time">
+                        <span>Fajr</span>
+                        <span>5:30 AM</span>
+                    </div>
+                    <div class="prayer-time">
+                        <span>Dhuhr</span>
+                        <span>12:30 PM</span>
+                    </div>
+                    <div class="prayer-time">
+                        <span>Asr</span>
+                        <span>3:45 PM</span>
+                    </div>
+                    <div class="prayer-time">
+                        <span>Maghrib</span>
+                        <span>6:15 PM</span>
+                    </div>
+                    <div class="prayer-time">
+                        <span>Isha</span>
+                        <span>7:45 PM</span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="wave-decoration"></div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services">
+    <!-- Features Section -->
+    <section class="features">
         <div class="container">
             <div class="section-header">
-                <h2>Explore Our Services</h2>
-                <button class="explore-btn">Explore All Services</button>
+                <h2>Our Services</h2>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="service1.jpg" alt="Service 1">
-                    <h3>Service Title 1</h3>
-                    <p>Service description goes here</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <h3>Daily Prayers</h3>
+                    <p>Five daily prayers in congregation with qualified Imams</p>
                 </div>
-                <div class="service-card">
-                    <img src="service2.jpg" alt="Service 2">
-                    <h3>Service Title 2</h3>
-                    <p>Service description goes here</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-quran"></i>
+                    </div>
+                    <h3>Quran Classes</h3>
+                    <p>Learn Quran with certified teachers for all ages</p>
                 </div>
-                <div class="service-card">
-                    <img src="service3.jpg" alt="Service 3">
-                    <h3>Service Title 3</h3>
-                    <p>Service description goes here</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Community Services</h3>
+                    <p>Marriage services, counseling, and community support</p>
                 </div>
-                <div class="service-card">
-                    <img src="service4.jpg" alt="Service 4">
-                    <h3>Service Title 4</h3>
-                    <p>Service description goes here</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Islamic Education</h3>
+                    <p>Regular classes on Islamic studies and Arabic language</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Charity & Zakat</h3>
+                    <p>Collection and distribution of Zakat and charitable donations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Events & Programs</h3>
+                    <p>Regular Islamic lectures, workshops, and community events</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('mosque-video');
+            video.addEventListener('loadeddata', function() {
+                console.log('Video loaded successfully');
+            });
+            video.addEventListener('error', function(e) {
+                console.error('Error loading video:', e);
+            });
+        });
+    </script>
 </body>
 </html> 

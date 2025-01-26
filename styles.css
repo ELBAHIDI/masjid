@@ -67,25 +67,58 @@ body {
 }
 
 .visa-btn {
-    background: #c1976b;
-    color: white;
+    /* Remove this block */
 }
 
 /* Hero Section */
 .hero {
     height: 80vh;
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
     position: relative;
     color: white;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden; /* Ensure video doesn't overflow */
+    background: #1F4C2C; /* Fallback color if video fails to load */
 }
 
+/* Add Video Background Styles */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: #000; /* Add this to see the container */
+}
+
+#mosque-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1; /* Make sure video is visible */
+}
+
+/* Add overlay for better text readability */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Reduced opacity */
+    z-index: -1;
+}
+
+/* Update hero content to ensure it's above the video */
 .hero-content {
+    position: relative;
+    z-index: 1;
     max-width: 800px;
     padding: 20px;
 }
@@ -106,6 +139,7 @@ body {
     margin-top: 20px;
 }
 
+/* Ensure wave decoration is above video */
 .wave-decoration {
     position: absolute;
     bottom: 0;
@@ -114,6 +148,7 @@ body {
     height: 100px;
     background: url('wave.svg') repeat-x;
     background-size: contain;
+    z-index: 1;
 }
 
 /* Services Section */
@@ -137,33 +172,8 @@ body {
     cursor: pointer;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.service-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-.service-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.service-card h3 {
-    padding: 15px;
-    color: #333;
-}
-
-.service-card p {
-    padding: 0 15px 15px;
-    color: #666;
+.services-grid, .service-card {
+    /* Remove these blocks */
 }
 
 /* Responsive Design */
@@ -185,6 +195,11 @@ body {
         gap: 20px;
         text-align: center;
     }
+    
+    .prayer-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -195,4 +210,88 @@ body {
     .services-grid {
         grid-template-columns: 1fr;
     }
+    
+    .prayer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Update existing styles */
+:root {
+    --primary-color: #1F4C2C;  /* Islamic green */
+    --secondary-color: #C5A572; /* Gold accent */
+    --text-color: #333;
+    --light-bg: #F5F5F5;
+}
+
+/* Add prayer times grid */
+.prayer-times {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.prayer-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.prayer-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.prayer-time span:first-child {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Update feature cards */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Update buttons */
+.donate-btn {
+    background: var(--secondary-color);
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.donate-btn:hover {
+    background: #B39461;
 } 

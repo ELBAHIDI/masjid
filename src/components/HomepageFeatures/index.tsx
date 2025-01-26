@@ -1,3 +1,4 @@
+import React from 'react';
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
@@ -56,15 +57,20 @@ function Feature({title, Svg, description}: FeatureItem) {
   );
 }
 
-export default function HomepageFeatures(): ReactNode {
+export default function HomepageFeatures(): JSX.Element {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+    <section className={styles.heroSection}>
+      <div className={styles.videoBackground}>
+        <video autoPlay muted loop id="mosque-video">
+          <source src="/masjid.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div className={styles.videoOverlay}></div>
+      <div className={styles.heroContent}>
+        <h1>Welcome to Your Spiritual Home</h1>
+        <p>Join us in worship, learning, and community</p>
+        {/* Add other content here */}
       </div>
     </section>
   );
