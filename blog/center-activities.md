@@ -1,5 +1,5 @@
 ---
-title: Center Activities
+title: Activities & Programs | Masjid Ridwan
 description: Stay updated with our latest activities and announcements
 ---
 

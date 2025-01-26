@@ -92,6 +92,18 @@ export default function HomepageFeatures(): JSX.Element {
       <div className={styles.heroContent}>
         <h1>MASJID RIDWAN</h1>
         <p>DARLINGTON COMMUNITY CENTER</p>
+        
+        <div className={styles.pageLinks}>
+          <Link to="/blog/introduction-to-islam" className={styles.pageLink}>
+            <h2>About Islam</h2>
+            <p>Learn about the fundamentals of Islam and its teachings</p>
+          </Link>
+          
+          <Link to="/blog/center-activities" className={styles.pageLink}>
+            <h2>Activities & Programs</h2>
+            <p>Discover our community events and services</p>
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -1,7 +1,10 @@
 ---
-title: Introduction to Islam
-description: Learn about the fundamentals of Islam
+title: About Islam | Masjid Ridwan
+description: Learn about the fundamentals of Islam and its teachings
 ---
+
+# About Islam
+## Understanding the Foundations of Faith
 
 # Introduction to Islam
 
