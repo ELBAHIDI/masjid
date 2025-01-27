@@ -64,10 +64,17 @@
     width: auto;
 }
 
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .navLinks {
     display: flex;
     gap: 30px;
-    margin: 0 auto;
+    margin-right: auto;
 }
 
 .navLink {
@@ -112,8 +119,9 @@
     color: white;
     font-size: 18px;
     cursor: pointer;
-    padding: 8px;
+    padding: 8px 16px;
     transition: color 0.3s ease;
+    margin-left: 30px;
 }
 
 .searchBtn:hover {
@@ -169,8 +177,11 @@
         display: block;
     }
     
+    .navContainer {
+        justify-content: flex-end;
+    }
+    
     .navLinks {
-        display: none;
         position: absolute;
         top: 100%;
         left: 0;
@@ -180,14 +191,16 @@
         flex-direction: column;
         text-align: center;
         gap: 15px;
+        display: none;
     }
     
     .navLinks.open {
         display: flex;
     }
     
-    .navRight {
-        margin-right: 50px;
+    .searchBtn {
+        margin-left: 0;
+        margin-right: 15px;
     }
 }
 

@@ -22,8 +22,16 @@ module.exports = {
       // ... docs config
     },
     blog: {
-      // Use custom blog layout
-      blogLayoutComponent: '@theme/BlogLayout',
+      // Use custom blog layout for specific routes
+      blogLayoutComponent: ({children, ...props}) => {
+        const path = props.location?.pathname;
+        if (path?.includes('/blog/center-activities')) {
+          const ActivitiesLayout = require('@site/src/theme/ActivitiesLayout').default;
+          return <ActivitiesLayout {...props}>{children}</ActivitiesLayout>;
+        }
+        const BlogLayout = require('@site/src/theme/BlogLayout').default;
+        return <BlogLayout {...props}>{children}</BlogLayout>;
+      },
       // ... other blog config
     },
   },

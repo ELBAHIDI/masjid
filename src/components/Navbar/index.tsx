@@ -44,17 +44,16 @@ export default function Navbar(): JSX.Element {
       {/* Main Navigation */}
       <nav className={styles.mainNav}>
         <div className={styles.container}>
-          {/* Navigation Links */}
-          <div className={`${styles.navLinks} ${isMenuOpen ? styles.open : ''}`}>
-            <Link to="/" className={styles.navLink}>Home</Link>
-            <Link to="/blog/introduction-to-islam" className={styles.navLink}>About Islam</Link>
-            <Link to="/blog/center-activities" className={styles.navLink}>Activities & Programs</Link>
-            <Link to="/prayer-times" className={styles.navLink}>Prayer Times</Link>
-          </div>
+          <div className={styles.navContainer}>
+            {/* Navigation Links */}
+            <div className={`${styles.navLinks} ${isMenuOpen ? styles.open : ''}`}>
+              <Link to="/" className={styles.navLink}>Home</Link>
+              <Link to="/blog/introduction-to-islam" className={styles.navLink}>About Islam</Link>
+              <Link to="/blog/center-activities" className={styles.navLink}>Activities & Programs</Link>
+              <Link to="/prayer-times" className={styles.navLink}>Prayer Times</Link>
+            </div>
 
-          {/* Search and Mobile Menu */}
-          <div className={styles.navRight}>
-            {/* Search Icon */}
+            {/* Search Button */}
             <button 
               className={styles.searchBtn} 
               onClick={() => setIsSearchOpen(!isSearchOpen)}

@@ -1,0 +1,97 @@
+.activitiesContainer {
+  position: relative;
+  min-height: 100vh;
+  color: white;
+  overflow-x: hidden;
+}
+
+.videoBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding-top: 80px;
+}
+
+.activitiesContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+/* Style the markdown content */
+.activitiesContent h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.activitiesContent h2 {
+  font-size: 2rem;
+  color: #C5A572;
+  margin: 2rem 0 1rem;
+}
+
+.activitiesContent h3 {
+  font-size: 1.5rem;
+  color: #C5A572;
+  margin: 1.5rem 0 1rem;
+}
+
+.activitiesContent p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content {
+    padding-top: 60px;
+  }
+
+  .activitiesContent {
+    padding: 20px;
+  }
+
+  .activitiesContent h1 {
+    font-size: 2rem;
+  }
+
+  .activitiesContent h2 {
+    font-size: 1.75rem;
+  }
+
+  .activitiesContent h3 {
+    font-size: 1.25rem;
+  }
+} 

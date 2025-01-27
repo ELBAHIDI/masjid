@@ -8,9 +8,9 @@ description: Stay updated with our latest activities and announcements
 ## Weekly Programs
 
 ### Friday Prayer (Jumu'ah)
-- Time: 1:00 PM
+- Time: 12:00 AM  and 1:00 PM
 - Khutbah followed by prayer
-- Special lectures by guest speakers
+
 
 ### Daily Prayers
 - All five daily prayers in congregation
