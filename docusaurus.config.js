@@ -18,6 +18,14 @@ module.exports = {
       links: [],
       copyright: 'Copyright © Islam Gate',
     },
+    docs: {
+      // ... docs config
+    },
+    blog: {
+      // Use custom blog layout
+      blogLayoutComponent: '@theme/BlogLayout',
+      // ... other blog config
+    },
   },
   // Disable default pages
   plugins: [],
@@ -34,4 +42,5 @@ module.exports = {
       },
     ],
   ],
+  staticDirectories: ['static'],
 }; 
