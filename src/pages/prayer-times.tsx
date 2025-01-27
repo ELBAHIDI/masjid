@@ -139,67 +139,76 @@ export default function PrayerTimesPage(): JSX.Element {
   return (
     <Layout title="Prayer Times">
       <div className={styles.prayerTimesContainer}>
-        <div className={styles.header}>
-          <h1>Today's Prayer Times</h1>
-          <div className={styles.citySelector}>
-            <select 
-              value={selectedCity.name}
-              onChange={(e) => {
-                const city = CITIES.find(c => c.name === e.target.value);
-                if (city) setSelectedCity(city);
-              }}
-            >
-              {CITIES.map(city => (
-                <option key={city.name} value={city.name}>{city.name}</option>
-              ))}
-            </select>
-          </div>
-          <p className={styles.date}>
-            {prayerTimes?.date && new Date(prayerTimes.date).toLocaleDateString()}
-          </p>
+        <div className={styles.videoBackground}>
+          <video autoPlay muted loop playsInline className={styles.video}>
+            <source src="/masjid_prayer.mp4" type="video/mp4" />
+          </video>
+          <div className={styles.videoOverlay}></div>
         </div>
 
-        {loading && <div className={styles.loading}>Loading prayer times...</div>}
-        
-        {error && <div className={styles.error}>{error}</div>}
-
-        {prayerTimes && !loading && !error && (
-          <>
-            <div className={styles.prayerTimesGrid}>
-              <div className={`${styles.prayerCard} ${nextPrayer === 'Fajr' ? styles.nextPrayer : ''}`}>
-                <h3 data-arabic="الفجر">Fajr</h3>
-                <p>{prayerTimes.fajr}</p>
-              </div>
-              <div className={`${styles.prayerCard} ${nextPrayer === 'Dhuhr' ? styles.nextPrayer : ''}`}>
-                <h3 data-arabic="الظهر">Dhuhr</h3>
-                <p>{prayerTimes.dhuhr}</p>
-              </div>
-              <div className={`${styles.prayerCard} ${nextPrayer === 'Asr' ? styles.nextPrayer : ''}`}>
-                <h3 data-arabic="العصر">Asr</h3>
-                <p>{prayerTimes.asr}</p>
-              </div>
-              <div className={`${styles.prayerCard} ${nextPrayer === 'Maghrib' ? styles.nextPrayer : ''}`}>
-                <h3 data-arabic="المغرب">Maghrib</h3>
-                <p>{prayerTimes.maghrib}</p>
-              </div>
-              <div className={`${styles.prayerCard} ${nextPrayer === 'Isha' ? styles.nextPrayer : ''}`}>
-                <h3 data-arabic="العشاء">Isha</h3>
-                <p>{prayerTimes.isha}</p>
-              </div>
+        <div className={styles.content}>
+          <div className={styles.header}>
+            <h1>Today's Prayer Times</h1>
+            <div className={styles.citySelector}>
+              <select 
+                value={selectedCity.name}
+                onChange={(e) => {
+                  const city = CITIES.find(c => c.name === e.target.value);
+                  if (city) setSelectedCity(city);
+                }}
+              >
+                {CITIES.map(city => (
+                  <option key={city.name} value={city.name}>{city.name}</option>
+                ))}
+              </select>
             </div>
+            <p className={styles.date}>
+              {prayerTimes?.date && new Date(prayerTimes.date).toLocaleDateString()}
+            </p>
+          </div>
 
-            {nextPrayer && countdown && (
-              <div className={styles.countdownInfo}>
-                <div className={styles.nextPrayerInfo}>
-                  Next Prayer: <span>{nextPrayer}</span>
+          {loading && <div className={styles.loading}>Loading prayer times...</div>}
+          
+          {error && <div className={styles.error}>{error}</div>}
+
+          {prayerTimes && !loading && !error && (
+            <>
+              <div className={styles.prayerTimesGrid}>
+                <div className={`${styles.prayerCard} ${nextPrayer === 'Fajr' ? styles.nextPrayer : ''}`}>
+                  <h3 data-arabic="الفجر">Fajr</h3>
+                  <p>{prayerTimes.fajr}</p>
                 </div>
-                <div className={styles.countdown}>
-                  Time Remaining: <span>{countdown}</span>
+                <div className={`${styles.prayerCard} ${nextPrayer === 'Dhuhr' ? styles.nextPrayer : ''}`}>
+                  <h3 data-arabic="الظهر">Dhuhr</h3>
+                  <p>{prayerTimes.dhuhr}</p>
+                </div>
+                <div className={`${styles.prayerCard} ${nextPrayer === 'Asr' ? styles.nextPrayer : ''}`}>
+                  <h3 data-arabic="العصر">Asr</h3>
+                  <p>{prayerTimes.asr}</p>
+                </div>
+                <div className={`${styles.prayerCard} ${nextPrayer === 'Maghrib' ? styles.nextPrayer : ''}`}>
+                  <h3 data-arabic="المغرب">Maghrib</h3>
+                  <p>{prayerTimes.maghrib}</p>
+                </div>
+                <div className={`${styles.prayerCard} ${nextPrayer === 'Isha' ? styles.nextPrayer : ''}`}>
+                  <h3 data-arabic="العشاء">Isha</h3>
+                  <p>{prayerTimes.isha}</p>
                 </div>
               </div>
-            )}
-          </>
-        )}
+
+              {nextPrayer && countdown && (
+                <div className={styles.countdownInfo}>
+                  <div className={styles.nextPrayerInfo}>
+                    Next Prayer: <span>{nextPrayer}</span>
+                  </div>
+                  <div className={styles.countdown}>
+                    Time Remaining: <span>{countdown}</span>
+                  </div>
+                </div>
+              )}
+            </>
+          )}
+        </div>
       </div>
     </Layout>
   );
