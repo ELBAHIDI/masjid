@@ -1,6 +1,14 @@
+.navWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
 /* Top Bar */
 .topBar {
-    background: #1e4976;
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 8px 0;
     font-size: 14px;
@@ -17,7 +25,8 @@
 
 .contactInfo {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 10px;
 }
 
 .contactInfo span {
@@ -36,14 +45,14 @@
 
 /* Main Navigation */
 .mainNav {
-    position: fixed;
-    top: 32px; /* Height of top bar */
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
-    padding: 12px 0;
-    z-index: 1000;
+    padding: 15px 0;
+    transition: background-color 0.3s ease;
+}
+
+.mainNav:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .logo {
@@ -58,7 +67,7 @@
 .navLinks {
     display: flex;
     gap: 30px;
-    margin-left: 40px;
+    margin: 0 auto;
 }
 
 .navLink {
@@ -66,19 +75,35 @@
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 8px 0;
+    font-family: 'Arial', sans-serif;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #C5A572;
+    transition: width 0.3s ease;
 }
 
 .navLink:hover {
     color: #C5A572;
 }
 
+.navLink:hover::after {
+    width: 100%;
+}
+
 .navRight {
     display: flex;
     align-items: center;
     gap: 20px;
-    margin-left: auto;
 }
 
 .searchBtn {
@@ -86,6 +111,21 @@
     border: none;
     color: white;
     font-size: 18px;
+    cursor: pointer;
+    padding: 8px;
+    transition: color 0.3s ease;
+}
+
+.searchBtn:hover {
+    color: #C5A572;
+}
+
+.mobileMenuBtn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
     cursor: pointer;
     padding: 8px;
 }
@@ -125,19 +165,28 @@
 }
 
 @media (max-width: 768px) {
-    .topBar {
-        display: none;
-    }
-    
-    .mainNav {
-        top: 0;
+    .mobileMenuBtn {
+        display: block;
     }
     
     .navLinks {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .navLinks.open {
+        display: flex;
     }
     
     .navRight {
-        margin-left: auto;
+        margin-right: 50px;
     }
 } 
