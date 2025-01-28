@@ -3,71 +3,92 @@ title: Masjid Ridwan
 description: Darlington Community Center - Your Gateway to Islamic Knowledge
 ---
 
-# Masjid Ridwan
-## Darlington Community Center
+# 🕌 Masjid Ridwan  
+## 🌟 Darlington Community Center  
 
-## What is Islam?
-Islam is a complete way of life that emphasizes peace, submission to Allah (God), and mercy to all creation. The word "Islam" itself means "submission to the will of Allah" and comes from the Arabic root word meaning "peace."
+Welcome to Masjid Ridwan, a center for worship, learning, and community engagement. Below, you'll find an introduction to Islam and information about our values, beliefs, and programs.  
 
-## The Five Pillars of Islam
+---
 
-### 1. Shahada (Declaration of Faith)
-The testimony that "There is no god but Allah, and Muhammad is the Messenger of Allah" (La ilaha illa Allah, Muhammad rasul Allah).
+## **📖 What is Islam?**  
+Islam is a complete way of life that emphasizes peace, submission to Allah (God), and mercy to all creation. The word "Islam" itself means "submission to the will of Allah" and comes from the Arabic root word meaning "peace."  
 
-### 2. Salah (Prayer)
-Muslims perform five daily prayers:
-- Fajr (Dawn prayer)
-- Dhuhr (Noon prayer)
-- Asr (Afternoon prayer)
-- Maghrib (Sunset prayer)
-- Isha (Night prayer)
+---
 
-### 3. Zakat (Charity)
-Annual charity giving 2.5% of one's wealth to those in need, purifying both wealth and heart.
+## **🕋 The Five Pillars of Islam**  
 
-### 4. Sawm (Fasting)
-Fasting during the month of Ramadan from dawn to sunset, teaching self-discipline and empathy.
+### **1. Shahada (Declaration of Faith)**  
+- The testimony that:  
+  _“There is no god but Allah, and Muhammad is the Messenger of Allah”_  
+  _(La ilaha illa Allah, Muhammad rasul Allah)._  
 
-### 5. Hajj (Pilgrimage)
-Pilgrimage to Mecca once in a lifetime for those who are physically and financially able.
+### **2. Salah (Prayer)**  
+Muslims perform five daily prayers at specific times:  
+- **Fajr**: Dawn prayer  
+- **Dhuhr**: Noon prayer  
+- **Asr**: Afternoon prayer  
+- **Maghrib**: Sunset prayer  
+- **Isha**: Night prayer  
 
-## Core Beliefs
+### **3. Zakat (Charity)**  
+- Annual charity giving 2.5% of one's wealth to those in need.  
+- Purifies both wealth and heart.  
 
-### 1. Belief in One God (Tawheed)
-Islam teaches pure monotheism - belief in one God, Allah, who has no partners or equals.
+### **4. Sawm (Fasting)**  
+- Fasting during the holy month of Ramadan, from dawn to sunset.  
+- Teaches self-discipline, gratitude, and empathy for the less fortunate.  
 
-### 2. Belief in Angels
-Angels are Allah's creation who carry out His commands and never disobey Him.
+### **5. Hajj (Pilgrimage)**  
+- A once-in-a-lifetime pilgrimage to Mecca for those physically and financially able.  
 
-### 3. Belief in Divine Books
-Including:
-- The Holy Quran
-- The Torah
-- The Psalms
-- The Gospel
+---
 
-### 4. Belief in Prophets
-All prophets from Adam to Muhammad (peace be upon them all) brought the same message of monotheism.
+## **🌟 Core Beliefs**  
 
-### 5. Belief in the Day of Judgment
-A day when all souls will be held accountable for their deeds.
+### **1. Belief in One God (Tawheed)**  
+- Islam teaches pure monotheism: belief in one God, Allah, who has no partners or equals.  
 
-### 6. Belief in Divine Decree
-Allah's complete knowledge and control over all that happens.
+### **2. Belief in Angels**  
+- Angels are Allah’s creation who carry out His commands and never disobey Him.  
 
-## Islamic Values
-- Peace and harmony
-- Kindness and compassion
-- Honesty and truthfulness
-- Respect for parents and elders
-- Care for the environment
-- Helping those in need
+### **3. Belief in Divine Books**  
+- Muslims believe in the following divine scriptures:  
+  - The Holy Quran  
+  - The Torah  
+  - The Psalms  
+  - The Gospel  
 
-## Learn More
-Join our classes and programs to learn more about Islam. We offer:
-- Basic Islamic studies
-- Quran reading and memorization
-- Islamic history classes
-- Q&A sessions with scholars
+### **4. Belief in Prophets**  
+- From Adam to Muhammad (peace be upon them all), all prophets conveyed the same message of monotheism.  
 
-[Contact Us](/contact) to learn more about our educational programs.
+### **5. Belief in the Day of Judgment**  
+- A day when all souls will be held accountable for their deeds.  
+
+### **6. Belief in Divine Decree**  
+- Allah has complete knowledge and control over everything that happens.  
+
+---
+
+## **🌿 Islamic Values**  
+Islam places great emphasis on the following values:  
+- 🕊️ **Peace and Harmony**  
+- ❤️ **Kindness and Compassion**  
+- 🤝 **Honesty and Truthfulness**  
+- 👪 **Respect for Parents and Elders**  
+- 🌱 **Care for the Environment**  
+- ✋ **Helping Those in Need**  
+
+---
+
+## **📚 Learn More**  
+Join our classes and programs to deepen your understanding of Islam. We offer:  
+- Basic Islamic studies  
+- Quran reading and memorization  
+- Islamic history classes  
+- Interactive Q&A sessions with scholars  
+
+[📧 Contact Us](/contact) to learn more about our educational programs and events.  
+
+---
+
+Feel free to let me know if you’d like additional edits or a personalized touch!  
