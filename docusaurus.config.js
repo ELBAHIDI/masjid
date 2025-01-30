@@ -36,14 +36,22 @@ module.exports = {
     },
   },
   // Disable default pages
-  plugins: [],
-  themes: [],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-pages',
+      {
+        path: 'src/pages',
+        routeBasePath: '/',
+      },
+    ],
+  ],
+  themes: ['@docusaurus/theme-classic'],
   presets: [
     [
       '@docusaurus/preset-classic',
       {
-        blog: false, // Disable default blog
-        docs: false, // Disable default docs
+        docs: false,
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -51,4 +59,28 @@ module.exports = {
     ],
   ],
   staticDirectories: ['static'],
-}; 
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr', 'ar'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+      },
+      fr: {
+        label: 'Français',
+        direction: 'ltr',
+      },
+      ar: {
+        label: 'العربية',
+        direction: 'rtl',
+      },
+    },
+  },
+  stylesheets: [
+    {
+      href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css',
+      type: 'text/css',
+    },
+  ],
+};
