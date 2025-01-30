@@ -17,12 +17,6 @@ interface City {
   longitude: number;
 }
 
-interface PrayerInfo {
-  name: string;
-  arabic: string;
-  time: string;
-}
-
 const CITIES: City[] = [
   { name: 'Montreal', latitude: 45.5017, longitude: -73.5673 },
   { name: 'Toronto', latitude: 43.6532, longitude: -79.3832 },
@@ -38,7 +32,6 @@ export default function PrayerTimesPage(): JSX.Element {
   const [error, setError] = useState<string | null>(null);
   const [nextPrayer, setNextPrayer] = useState<string | null>(null);
 
-  // Fetch prayer times from API
   useEffect(() => {
     const fetchPrayerTimes = async () => {
       try {
@@ -65,7 +58,6 @@ export default function PrayerTimesPage(): JSX.Element {
           date: date,
         });
 
-        // Calculate next prayer
         calculateNextPrayer(timings);
       } catch (err) {
         setError('Prayer times are currently unavailable. Please try again later.');
@@ -75,7 +67,6 @@ export default function PrayerTimesPage(): JSX.Element {
     };
 
     fetchPrayerTimes();
-    // Refresh every hour
     const interval = setInterval(fetchPrayerTimes, 3600000);
     return () => clearInterval(interval);
   }, [selectedCity.latitude, selectedCity.longitude]);
@@ -116,7 +107,6 @@ export default function PrayerTimesPage(): JSX.Element {
     }
   };
 
-  // Add helper functions
   const getPrayerTime = (prayerName: string, times: PrayerTimes): Date => {
     const timeStr = times[prayerName.toLowerCase() as keyof PrayerTimes];
     const [hours, minutes] = timeStr.split(':').map(Number);
@@ -168,30 +158,29 @@ export default function PrayerTimesPage(): JSX.Element {
           </div>
 
           {loading && <div className={styles.loading}>Loading prayer times...</div>}
-          
           {error && <div className={styles.error}>{error}</div>}
 
           {prayerTimes && !loading && !error && (
             <>
               <div className={styles.prayerTimesGrid}>
                 <div className={`${styles.prayerCard} ${nextPrayer === 'Fajr' ? styles.nextPrayer : ''}`}>
-                  <h3 data-arabic="الفجر">Fajr</h3>
+                  <h3>Fajr</h3>
                   <p>{prayerTimes.fajr}</p>
                 </div>
                 <div className={`${styles.prayerCard} ${nextPrayer === 'Dhuhr' ? styles.nextPrayer : ''}`}>
-                  <h3 data-arabic="الظهر">Dhuhr</h3>
+                  <h3>Dhuhr</h3>
                   <p>{prayerTimes.dhuhr}</p>
                 </div>
                 <div className={`${styles.prayerCard} ${nextPrayer === 'Asr' ? styles.nextPrayer : ''}`}>
-                  <h3 data-arabic="العصر">Asr</h3>
+                  <h3>Asr</h3>
                   <p>{prayerTimes.asr}</p>
                 </div>
                 <div className={`${styles.prayerCard} ${nextPrayer === 'Maghrib' ? styles.nextPrayer : ''}`}>
-                  <h3 data-arabic="المغرب">Maghrib</h3>
+                  <h3>Maghrib</h3>
                   <p>{prayerTimes.maghrib}</p>
                 </div>
                 <div className={`${styles.prayerCard} ${nextPrayer === 'Isha' ? styles.nextPrayer : ''}`}>
-                  <h3 data-arabic="العشاء">Isha</h3>
+                  <h3>Isha</h3>
                   <p>{prayerTimes.isha}</p>
                 </div>
               </div>
@@ -212,4 +201,4 @@ export default function PrayerTimesPage(): JSX.Element {
       </div>
     </Layout>
   );
-} 
+}
