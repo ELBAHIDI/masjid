@@ -206,22 +206,57 @@
 
 /* Language Selector */
 .langSelector {
-    margin-left: auto;
+    position: relative;
 }
 
-.langSelect {
+.langButton {
     background: transparent;
+    border: none;
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 4px 8px;
-    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     cursor: pointer;
-    font-size: 0.9rem;
+    padding: 4px 8px;
+    font-size: 14px;
 }
 
-.langSelect option {
-    background: #1e4976;
+.langButton i {
+    font-size: 16px;
+}
+
+.langDropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 4px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 100px;
+    z-index: 1000;
+}
+
+.langOption {
+    background: transparent;
+    border: none;
     color: white;
+    padding: 8px 16px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 2px;
+}
+
+.langOption:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.langOption.active {
+    background: rgba(197, 165, 114, 0.2);
+    color: #C5A572;
 }
 
 /* Separator Line */

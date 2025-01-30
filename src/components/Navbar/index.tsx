@@ -2,9 +2,22 @@ import React, { useState } from 'react';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
+const languages = [
+  { code: 'en', label: 'En' },
+  { code: 'fr', label: 'Fr' },
+  { code: 'ar', label: 'عربي' }
+];
+
 export default function Navbar(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState('en');
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+
+  const handleLanguageChange = (langCode: string) => {
+    setCurrentLang(langCode);
+    setIsLangMenuOpen(false);
+  };
 
   return (
     <div className={styles.navWrapper}>
@@ -13,6 +26,28 @@ export default function Navbar(): JSX.Element {
           <div className={styles.contactInfo}>
             <i className="fas fa-phone"></i>
             <span>Contact: +1 (514) 446-3344</span>
+          </div>
+          <div className={styles.langSelector}>
+            <button 
+              className={styles.langButton}
+              onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+            >
+              <i className="fas fa-globe"></i>
+              <span>{languages.find(l => l.code === currentLang)?.label}</span>
+            </button>
+            {isLangMenuOpen && (
+              <div className={styles.langDropdown}>
+                {languages.map(lang => (
+                  <button
+                    key={lang.code}
+                    className={`${styles.langOption} ${currentLang === lang.code ? styles.active : ''}`}
+                    onClick={() => handleLanguageChange(lang.code)}
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

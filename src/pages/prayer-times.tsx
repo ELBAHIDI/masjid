@@ -17,6 +17,12 @@ interface City {
   longitude: number;
 }
 
+interface PrayerInfo {
+  name: string;
+  arabic: string;
+  time: string;
+}
+
 const CITIES: City[] = [
   { name: 'Montreal', latitude: 45.5017, longitude: -73.5673 },
   { name: 'Toronto', latitude: 43.6532, longitude: -79.3832 },
@@ -201,4 +207,4 @@ export default function PrayerTimesPage(): JSX.Element {
       </div>
     </Layout>
   );
-}
+} 
