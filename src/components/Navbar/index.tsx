@@ -9,12 +9,40 @@ const languages = [
   { code: 'ar', label: 'Ar' }
 ];
 
+const menuTranslations = {
+  en: {
+    home: 'Home',
+    aboutIslam: 'About Islam',
+    activities: 'Activities',
+    prayerTimes: 'Prayer Times',
+    contact: 'Contact: +1 (514) 446-3344',
+    search: 'Search...'
+  },
+  fr: {
+    home: 'Accueil',
+    aboutIslam: "L'Islam",
+    activities: 'Activités',
+    prayerTimes: 'Horaires de Prière',
+    contact: 'Contact: +1 (514) 446-3344',
+    search: 'Rechercher...'
+  },
+  ar: {
+    home: 'الرئيسية',
+    aboutIslam: 'عن الإسلام',
+    activities: 'الأنشطة',
+    prayerTimes: 'مواقيت الصلاة',
+    contact: 'اتصل بنا: ٣٣٤٤-٤٤٦-٥١٤-١+',
+    search: 'بحث...'
+  }
+};
+
 export default function Navbar(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const { currentLang, setLanguage } = useLanguage();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const t = menuTranslations[currentLang];
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -45,7 +73,7 @@ export default function Navbar(): JSX.Element {
         <div className={styles.container}>
           <div className={styles.contactInfo}>
             <i className="fas fa-phone"></i>
-            <span>Contact: +1 (514) 446-3344</span>
+            <span>{t.contact}</span>
           </div>
           <div className={styles.langSelector} ref={dropdownRef}>
             <button 
@@ -87,17 +115,17 @@ export default function Navbar(): JSX.Element {
         <div className={styles.container}>
           <div className={styles.navContainer}>
             <div className={`${styles.navLinks} ${isMenuOpen ? styles.open : ''}`}>
-              <Link to="/" className={styles.navLink}>
-                Home
+              <Link to={`/${currentLang === 'en' ? '' : currentLang}`} className={styles.navLink}>
+                {t.home}
               </Link>
-              <Link to="/blog/introduction-to-islam" className={styles.navLink}>
-                About Islam
+              <Link to={`/${currentLang === 'en' ? '' : currentLang}/blog/introduction-to-islam`} className={styles.navLink}>
+                {t.aboutIslam}
               </Link>
-              <Link to="/blog/center-activities" className={styles.navLink}>
-                Activities
+              <Link to={`/${currentLang === 'en' ? '' : currentLang}/blog/center-activities`} className={styles.navLink}>
+                {t.activities}
               </Link>
-              <Link to="/prayer-times" className={styles.navLink}>
-                Prayer Times
+              <Link to={`/${currentLang === 'en' ? '' : currentLang}/prayer-times`} className={styles.navLink}>
+                {t.prayerTimes}
               </Link>
             </div>
 
@@ -122,7 +150,7 @@ export default function Navbar(): JSX.Element {
             <div className={styles.searchContainer}>
               <input 
                 type="text" 
-                placeholder="Search..."
+                placeholder={t.search}
                 className={styles.searchInput}
                 autoFocus
               />

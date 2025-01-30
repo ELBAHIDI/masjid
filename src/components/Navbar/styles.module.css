@@ -335,4 +335,57 @@
     color: #C5A572;
     width: 16px;
     height: 16px;
+}
+
+/* Arabic Menu Styles with more specific selectors */
+html[lang="ar"] .navLinks,
+[dir='rtl'] .navLinks {
+  font-family: 'Almarai', sans-serif !important;
+  font-size: 3.2rem !important;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+html[lang="ar"] .navLink,
+[dir='rtl'] .navLink {
+  font-family: 'Almarai', sans-serif !important;
+  font-size: 3.2rem !important;
+  font-weight: 800 !important;
+  padding: 0.5rem 1.5rem;
+  color: white !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+html[lang="ar"] .navContainer,
+[dir='rtl'] .navContainer {
+  padding: 1.5rem 0;
+}
+
+/* Force override any other styles */
+html[lang="ar"] .navLinks *,
+[dir='rtl'] .navLinks * {
+  font-family: 'Almarai', sans-serif !important;
+}
+
+html[lang="ar"] .navLink:hover,
+[dir='rtl'] .navLink:hover {
+  color: #C5A572 !important;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Additional styles for better visibility */
+html[lang="ar"] .navWrapper,
+[dir='rtl'] .navWrapper {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  html[lang="ar"] .navLink,
+  [dir='rtl'] .navLink {
+    font-size: 2.8rem !important;
+  }
 } 

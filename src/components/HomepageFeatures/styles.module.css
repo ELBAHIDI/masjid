@@ -249,9 +249,19 @@
   }
 }
 
-/* Add RTL support */
+/* Update RTL support */
 [dir='rtl'] .heroContent {
-  font-family: 'Traditional Arabic', Arial, sans-serif;
+  font-family: 'Noto Naskh Arabic', Arial, sans-serif;
+}
+
+[dir='rtl'] .heroContent h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+[dir='rtl'] .heroContent p {
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 [dir='rtl'] .pageLink {
@@ -259,5 +269,13 @@
 }
 
 [dir='rtl'] .pageLink h2 {
-  font-family: 'Traditional Arabic', Arial, sans-serif;
+  font-family: 'Noto Naskh Arabic', Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+[dir='rtl'] .pageLink p {
+  font-family: 'Noto Naskh Arabic', Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
 }
