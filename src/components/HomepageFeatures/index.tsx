@@ -3,7 +3,33 @@ import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
-export default function HomepageFeatures(): JSX.Element {
+interface Translations {
+  title: string;
+  subtitle: string;
+  aboutIslam: {
+    title: string;
+    description: string;
+  };
+  activities: {
+    title: string;
+    description: string;
+  };
+}
+
+const defaultTranslations: Translations = {
+  title: "MASJID RIDWAN",
+  subtitle: "DARLINGTON COMMUNITY CENTER",
+  aboutIslam: {
+    title: "About Islam",
+    description: "Learn about the fundamentals of Islam and its teachings"
+  },
+  activities: {
+    title: "Activities & Programs",
+    description: "Discover our community events and services"
+  }
+};
+
+export default function HomepageFeatures({ translations = defaultTranslations }): JSX.Element {
   const [currentVideo, setCurrentVideo] = useState('');
   const [nextVideo, setNextVideo] = useState('');
   const currentVideoRef = useRef<HTMLVideoElement>(null);
@@ -90,18 +116,18 @@ export default function HomepageFeatures(): JSX.Element {
       </div>
       <div className={styles.videoOverlay}></div>
       <div className={styles.heroContent}>
-        <h1>MASJID RIDWAN</h1>
-        <p>DARLINGTON COMMUNITY CENTER</p>
+        <h1>{translations.title}</h1>
+        <p>{translations.subtitle}</p>
         
         <div className={styles.pageLinks}>
           <Link to="/blog/introduction-to-islam" className={styles.pageLink}>
-            <h2>About Islam</h2>
-            <p>Learn about the fundamentals of Islam and its teachings</p>
+            <h2>{translations.aboutIslam.title}</h2>
+            <p>{translations.aboutIslam.description}</p>
           </Link>
           
           <Link to="/blog/center-activities" className={styles.pageLink}>
-            <h2>Activities & Programs</h2>
-            <p>Discover our community events and services</p>
+            <h2>{translations.activities.title}</h2>
+            <p>{translations.activities.description}</p>
           </Link>
         </div>
       </div>

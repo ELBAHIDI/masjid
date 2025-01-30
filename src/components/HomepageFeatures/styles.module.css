@@ -248,3 +248,16 @@
     font-size: 1.5rem;
   }
 }
+
+/* Add RTL support */
+[dir='rtl'] .heroContent {
+  font-family: 'Traditional Arabic', Arial, sans-serif;
+}
+
+[dir='rtl'] .pageLink {
+  text-align: right;
+}
+
+[dir='rtl'] .pageLink h2 {
+  font-family: 'Traditional Arabic', Arial, sans-serif;
+}

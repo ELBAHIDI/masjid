@@ -6,7 +6,7 @@ import { useLanguage } from '@site/src/contexts/LanguageContext';
 const languages = [
   { code: 'en', label: 'En' },
   { code: 'fr', label: 'Fr' },
-  { code: 'ar', label: 'عربي' }
+  { code: 'ar', label: 'Ar' }
 ];
 
 export default function Navbar(): JSX.Element {
