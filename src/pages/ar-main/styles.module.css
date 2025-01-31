@@ -1,0 +1,95 @@
+/* Import Arabic font */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+.heroSection {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.videoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Amiri', serif;
+}
+
+.heroContent h1 {
+  font-size: 4.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #C5A572;
+}
+
+.heroContent p {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.pageLinks {
+  display: flex;
+  gap: 40px;
+  margin-top: 60px;
+  justify-content: center;
+}
+
+.pageLink {
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(197, 165, 114, 0.3);
+  transition: all 0.3s ease;
+  width: 300px;
+  text-align: right;
+}
+
+.pageLink h2 {
+  color: white;
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.pageLink p {
+  color: #C5A572;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.pageLink:hover {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: #C5A572;
+  transform: translateY(-5px);
+} 

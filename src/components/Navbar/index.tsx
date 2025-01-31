@@ -6,7 +6,7 @@ import { useLanguage } from '@site/src/contexts/LanguageContext';
 const languages = [
   { code: 'en', label: 'En' },
   { code: 'fr', label: 'Fr' },
-  { code: 'ar', label: 'Ar' }
+  { code: 'ar-main', label: 'Ar' }
 ];
 
 const menuTranslations = {
@@ -55,7 +55,13 @@ export default function Navbar(): JSX.Element {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleLanguageChange = (langCode: 'en' | 'fr' | 'ar') => {
+  const handleLanguageChange = (langCode: 'en' | 'fr' | 'ar-main') => {
+    if (langCode === 'ar-main') {
+      window.location.href = '/ar-main';
+      setIsLangMenuOpen(false);
+      return;
+    }
+    
     // Get current path without language prefix
     const currentPath = window.location.pathname;
     const pathParts = currentPath.split('/');
@@ -65,6 +71,14 @@ export default function Navbar(): JSX.Element {
     const newPath = langCode === 'en' ? `/${basePath}` : `/${langCode}/${basePath}`;
     window.location.href = newPath || '/';
     setIsLangMenuOpen(false);
+  };
+
+  // Add this helper function
+  const getNavigationPath = (path: string) => {
+    if (currentLang === 'ar-main') {
+      return `/ar-main${path}`; // Use ar-main prefix for Arabic version
+    }
+    return currentLang === 'en' ? path : `/${currentLang}${path}`;
   };
 
   return (
@@ -98,7 +112,7 @@ export default function Navbar(): JSX.Element {
                   <button
                     key={lang.code}
                     className={`${styles.langOption} ${currentLang === lang.code ? styles.active : ''}`}
-                    onClick={() => handleLanguageChange(lang.code as 'en' | 'fr' | 'ar')}
+                    onClick={() => handleLanguageChange(lang.code as 'en' | 'fr' | 'ar-main')}
                   >
                     {lang.label}
                   </button>
@@ -115,16 +129,28 @@ export default function Navbar(): JSX.Element {
         <div className={styles.container}>
           <div className={styles.navContainer}>
             <div className={`${styles.navLinks} ${isMenuOpen ? styles.open : ''}`}>
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}`} className={styles.navLink}>
+              <Link 
+                to={getNavigationPath('/')} 
+                className={styles.navLink}
+              >
                 {t.home}
               </Link>
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}/blog/introduction-to-islam`} className={styles.navLink}>
+              <Link 
+                to={getNavigationPath('/blog/introduction-to-islam')} 
+                className={styles.navLink}
+              >
                 {t.aboutIslam}
               </Link>
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}/blog/center-activities`} className={styles.navLink}>
+              <Link 
+                to={getNavigationPath('/blog/center-activities')} 
+                className={styles.navLink}
+              >
                 {t.activities}
               </Link>
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}/prayer-times`} className={styles.navLink}>
+              <Link 
+                to={getNavigationPath('/prayer-times')} 
+                className={styles.navLink}
+              >
                 {t.prayerTimes}
               </Link>
             </div>
